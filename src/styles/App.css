@@ -1,0 +1,59 @@
+.App {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebarStyle {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.3s ease-out;
+  border-right: solid 0.25rem #ccc;
+  background-color: #78938a;
+}
+
+.contentStyle {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.3s ease-out;
+  background-color: #f1ddbf;
+  color: #78938a;
+}
+
+.overlayStyle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  transition: all 0.8s ease-out;
+  background-color: rgb(82, 94, 117, 0.75);
+  z-index: 1;
+}
+
+.sidebarListStyle {
+  list-style: none;
+  margin: 0;
+  padding: 5rem 0 0 0;
+  border-right: solid 0.35rem #78938a;
+  height: 70%;
+}
+
+.sidebarListItemStyle {
+  height: 4rem;
+  border: solid 0.25rem #525e75;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
