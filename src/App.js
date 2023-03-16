@@ -15,6 +15,11 @@ function App() {
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
+    // if (!sidebarOpen) {
+    //   setTimeout(() => {
+    //     setSidebarOpen(true);
+    //   }, 800);
+    // }
   };
 
   const sidebarWidth = sidebarOpen ? "30%" : "15%";
@@ -22,6 +27,9 @@ function App() {
 
   const sidebarSize = {
     width: sidebarWidth,
+    // borderRight: sidebarOpen
+    //   ? "10px inset transparent"
+    //   : "3px inset transparent",
   };
   const contentSize = {
     width: contentWidth,
@@ -29,6 +37,19 @@ function App() {
   const overlaySize = {
     display: sidebarOpen ? "block" : "none",
   };
+
+  // // const overlaySize = {
+  // //   display: "none",
+  // // };
+
+  // // if (sidebarOpen) {
+  // //   setTimeout(() => {
+  // //     overlaySize.display = "block";
+  // //   }, 300); // delay the block display by 0.3 seconds (300 milliseconds)
+  // }
+  // // else {
+  // //   overlaySize.display = "none";
+  // // }
 
   const components = {
     portfolio: <Portfolio />,
