@@ -1,25 +1,114 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./styles/App.css";
+import Portfolio from "./components/Portfolio";
+import WorkHistory from "./components/WorkHistory";
+import Gallery from "./components/Gallery";
+import ImageResizerTool from "./components/ImageResizerTool";
+import PdfToVoiceTool from "./components/PdfToVoiceTool";
+import CryptoQuotes from "./components/CryptoQuotes";
+import PreciousMetalQuotes from "./components/PreciousMetalQuotes";
+import TimeZoneCalculator from "./components/TimeZoneCalculator";
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [activeComponent, setActiveComponent] = useState(null);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  const sidebarWidth = sidebarOpen ? "30%" : "15%";
+  const contentWidth = sidebarOpen ? "85%" : "85%";
+
+  const sidebarSize = {
+    width: sidebarWidth,
+  };
+  const contentSize = {
+    width: contentWidth,
+  };
+  const overlaySize = {
+    display: sidebarOpen ? "block" : "none",
+  };
+
+  const components = {
+    portfolio: <Portfolio />,
+    workHistory: <WorkHistory />,
+    gallery: <Gallery />,
+    imageResizerTool: <ImageResizerTool />,
+    pdfToVoiceTool: <PdfToVoiceTool />,
+    cryptoQuotes: <CryptoQuotes />,
+    preciousMetalQuotes: <PreciousMetalQuotes />,
+    timeZoneCalculator: <TimeZoneCalculator />,
+  };
+
+  const handleClick = (componentName) => {
+    setActiveComponent(components[componentName]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="sidebar sidebarStyle" style={sidebarSize}>
+        <button onClick={toggleSidebar}>Toggle Sidebar</button>
+        <ul className="sidebarListStyle">
+          <li
+            className="sidebarListItemStyle"
+            onClick={() => handleClick("portfolio")}
+          >
+            Portfolio
+          </li>
+          <li
+            className="sidebarListItemStyle"
+            onClick={() => handleClick("workHistory")}
+          >
+            Work History
+          </li>
+          <li
+            className="sidebarListItemStyle"
+            onClick={() => handleClick("gallery")}
+          >
+            Gallery
+          </li>
+          <li
+            className="sidebarListItemStyle"
+            onClick={() => handleClick("imageResizerTool")}
+          >
+            Image Resizer Tool
+          </li>
+          <li
+            className="sidebarListItemStyle"
+            onClick={() => handleClick("pdfToVoiceTool")}
+          >
+            PDF to Voice Tool
+          </li>
+          <li
+            className="sidebarListItemStyle"
+            onClick={() => handleClick("cryptoQuotes")}
+          >
+            Crypto Quotes
+          </li>
+          <li
+            className="sidebarListItemStyle"
+            onClick={() => handleClick("preciousMetalQuotes")}
+          >
+            Precious Metals Quotes
+          </li>
+          <li
+            className="sidebarListItemStyle"
+            onClick={() => handleClick("timeZoneCalculator")}
+          >
+            Time Zone Calculator
+          </li>
+        </ul>
+      </div>
+      <div className="content contentStyle" style={contentSize}>
+        {activeComponent || <h1>Welcome to my app!</h1>}
+      </div>
+      <div
+        className="overlay overlayStyle"
+        style={overlaySize}
+        onClick={toggleSidebar}
+      ></div>
     </div>
   );
 }
-
 export default App;
