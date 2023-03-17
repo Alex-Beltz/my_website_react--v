@@ -1,0 +1,197 @@
+/* .imageDropBox {
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  background-color: #92ba92;
+}
+
+.resizeOPtionsCont {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnailItem {
+  max-height: 75px;
+  max-width: 75px;
+} */
+/*/
+//
+//
+/*/
+
+/* .imageResizerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: rgb(153, 95, 95);
+}
+
+.imageResizerRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 900px;
+}
+
+.thumbnailsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 350px;
+  overflow-y: scroll;
+  margin-right: 2rem;
+  background-color: rgb(63, 63, 122);
+}
+
+.thumbnailsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.thumbnailItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.thumbnailItem img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.imageDropBoxContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 2rem;
+  background-color: bisque;
+}
+
+.dropAreaText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.imageDropBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(27, 91, 83);
+} */
+
+.imageResizerContainer {
+  display: flex;
+  /* flex-direction: column;
+  align-items: center; */
+  margin-top: 2rem;
+  background-color: #4270a5;
+}
+
+header {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.imageDropBox {
+  width: 500px;
+  height: 500px;
+  border: 3px dashed #ccc;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #5ebf78;
+}
+
+.imageDropBoxInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.resizedImagesCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #16212e;
+}
+
+.dropAreaText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.fileInputButton {
+  padding: 0.5rem;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.resizeOptionsCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  background-color: #1b4327;
+}
+
+.thumbnailsContainer {
+  width: 350px;
+  height: 350px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow-y: scroll;
+  margin-right: 2rem;
+  background-color: #583560;
+}
+
+.thumbnailsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.thumbnailItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+  margin: 0.5rem;
+}
+
+.thumbnailItem img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.thumbnailItemName {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
