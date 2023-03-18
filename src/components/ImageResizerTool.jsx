@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../styles/ImageResizerTool.css";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
+import "../styles/ImageResizerTool.css";
 
 export default function ImageResizerTool() {
   const [images, setImages] = useState([]);
@@ -20,7 +20,7 @@ export default function ImageResizerTool() {
   };
 
   const handleFiles = async (files) => {
-    const images = await Promise.all(
+    const newImages = await Promise.all(
       files
         .filter((file) => file.type.startsWith("image/"))
         .map(async (file) => {
@@ -28,8 +28,7 @@ export default function ImageResizerTool() {
           return { name: file.name, dataUrl };
         })
     );
-    setImages(images);
-    setResizedImages([]);
+    setImages((prevImages) => [...prevImages, ...newImages]);
   };
 
   const handleImageResize = async () => {
@@ -42,9 +41,12 @@ export default function ImageResizerTool() {
         const context = canvas.getContext("2d");
         const img = await createImage(image.dataUrl);
         context.drawImage(img, 0, 0, width, height);
-        const resizedDataUrl = canvas.toDataURL();
+        const resizedDataUrl = canvas.toDataURL("image/jpeg", 0.8); // set to JPEG format with quality of 80%
+        const nameParts = image.name.split(".");
+        const extension = nameParts.pop();
+        const name = nameParts.join("_") + "_" + resizeOption + "." + extension;
         const resizedBlob = await dataURLToBlob(resizedDataUrl);
-        return { name: `${image.name}_${resizeOption}`, blob: resizedBlob };
+        return { name, blob: resizedBlob, previewUrl: resizedDataUrl };
       })
     );
     setResizedImages(resized);
@@ -57,6 +59,9 @@ export default function ImageResizerTool() {
     });
     const blob = await zip.generateAsync({ type: "blob" });
     saveAs(blob, "resized_images.zip");
+    setImages([]);
+    setResizedImages([]);
+    setResizeOption("100x100"); // reset resize option to default
   };
 
   const readFileAsDataURL = (file) => {
@@ -95,6 +100,7 @@ export default function ImageResizerTool() {
       xhr.send();
     });
   };
+
   return (
     <div className="imageResizerContainer">
       {/* <header>Drop or upload images here</header> */}
@@ -112,7 +118,7 @@ export default function ImageResizerTool() {
         </div>
         <div className="imageDropBoxContainer">
           <div className="dropAreaText">
-            <div>Drag and drop images here, or</div>
+            <div>Drag and drop images below, or</div>
 
             <label className="fileInputButton">
               <input type="file" onChange={handleFileInputChange} multiple />
