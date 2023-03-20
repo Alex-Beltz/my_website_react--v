@@ -1,0 +1,26 @@
+.WorkExperienceCont {
+  padding: auto 5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.ExperinceCategoryCont {
+  display: flex;
+  align-items: center;
+  margin: 2rem;
+}
+
+.WorkExperienceDescription {
+  width: 55%;
+}
+
+.WorkExperienceImg {
+  width: 35%;
+}
+
+.WorkExperienceImg:nth-child(odd) {
+  margin-right: 2rem;
+}
+.WorkExperienceImg:nth-child(even) {
+  margin-left: 2rem;
+}

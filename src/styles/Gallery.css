@@ -1,7 +1,7 @@
 .gallery {
   height: 100%;
   padding: 5rem;
-  background-color: #525e75;
+  /* background-color: #525e75; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -14,7 +14,7 @@
   margin: 2rem;
   position: relative;
   cursor: pointer;
-  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3); */
   border-radius: 2rem;
   z-index: 99;
 }
@@ -24,16 +24,17 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease-out;
+  /* transition: transform 0.4s ease-out; */
   border-radius: 2rem;
-  border: 0.15rem solid #414f68;
+  /* border: 0.15rem solid #78938a; */
   z-index: 98;
+  /* transform: scale(1.1); */
 }
 
 .galleryImage:hover img {
   transform: scale(1.2);
-  box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.3);
-  border: 0.2rem solid #2e3d59;
+  /* box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.3); */
+  /* border: 0.2rem solid #414f68; */
   z-index: 99;
 }
 
