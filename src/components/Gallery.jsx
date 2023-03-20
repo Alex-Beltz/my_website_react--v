@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../styles/Gallery.css";
+import "../styles/App.css";
 import galleryImages from "./importImages.js";
 
 const Gallery = () => {
@@ -32,7 +33,7 @@ const Gallery = () => {
           key={index}
           onClick={() => handleImageClick(image)}
         >
-          <img src={image} alt={`gallery-image-${index}`} />
+          <img className="shadow" src={image} alt={`gallery-image-${index}`} />
         </div>
       ))}
       {selectedImage && (
