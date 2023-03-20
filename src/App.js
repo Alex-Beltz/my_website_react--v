@@ -7,7 +7,7 @@ import ImageResizerTool from "./components/ImageResizerTool";
 import PdfToVoiceTool from "./components/PdfToVoiceTool";
 import CryptoQuotes from "./components/CryptoQuotes";
 import PreciousMetalQuotes from "./components/PreciousMetalQuotes";
-import TimeZoneCalculator from "./components/TimeZoneCalculator";
+// import TimeZoneCalculator from "./components/TimeZoneCalculator";
 
 //sidebar icons
 import CryptoQuotesIcon from "./icons/CryptoQuotes.png";
@@ -16,7 +16,7 @@ import ImageResizerToolIcon from "./icons/ImageResizerTool.png";
 import PdfToVoiceToolIcon from "./icons/PdfToVoiceTool.png";
 import portfolioIcon from "./icons/portfolio.png";
 import PreciousMetalQuotesIcon from "./icons/PreciousMetalQuotes.png";
-import TimeZoneCalculatorIcon from "./icons/TimeZoneCalculator.png";
+// import TimeZoneCalculatorIcon from "./icons/TimeZoneCalculator.png";
 import WorkHistoryIcon from "./icons/WorkHistory.png";
 
 function App() {
@@ -27,24 +27,6 @@ function App() {
     setSidebarOpen(!sidebarOpen);
   };
 
-  // // Function to set overflow hidden or auto for active component
-  // const setActiveComponentOverflow = () => {
-  //   const overflowValue = sidebarOpen ? "hidden" : "auto";
-  //   setActiveComponent((prevActiveComponent) => {
-  //     return (
-  //       prevActiveComponent && (
-  //         <div style={{ overflow: overflowValue }}>
-  //           {prevActiveComponent.props.children}
-  //         </div>
-  //       )
-  //     );
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   setActiveComponentOverflow();
-  // }, [sidebarOpen]);
-
   const sidebarWidth = sidebarOpen ? "30%" : "8%";
   const contentWidth = sidebarOpen ? "92%" : "92%";
 
@@ -53,12 +35,9 @@ function App() {
   };
   const contentSize = {
     width: contentWidth,
-    // overflowY: sidebarOpen ? "hidden" : "auto",
   };
   const overlaySize = {
     display: sidebarOpen ? "block" : "none",
-    // overflowY: sidebarOpen ? "hidden" : "auto",
-    // width: `100% - ${sidebarWidth}`,
   };
 
   const iconSize = {
@@ -74,7 +53,7 @@ function App() {
     pdftovoicetool: <PdfToVoiceTool />,
     cryptoquotes: <CryptoQuotes />,
     preciousmetalsquotes: <PreciousMetalQuotes />,
-    timezonecalculator: <TimeZoneCalculator />,
+    // timezonecalculator: <TimeZoneCalculator />,
   };
 
   const icons = [
@@ -85,7 +64,7 @@ function App() {
     { name: "PDF to Voice Tool", icon: PdfToVoiceToolIcon },
     { name: "Crypto Quotes", icon: CryptoQuotesIcon },
     { name: "Precious Metals Quotes", icon: PreciousMetalQuotesIcon },
-    { name: "Time Zone Calculator", icon: TimeZoneCalculatorIcon },
+    // { name: "Time Zone Calculator", icon: TimeZoneCalculatorIcon },
   ];
 
   const handleClick = (componentName) => {
@@ -111,7 +90,10 @@ function App() {
                   {icon.name}
                 </React.Fragment>
               ) : (
-                <img src={icon.icon} alt={icon.name} style={iconSize} />
+                <React.Fragment>
+                  <img src={icon.icon} alt={icon.name} style={iconSize} />
+                  <span className="sidebarListItemTooltip">{icon.name}</span>
+                </React.Fragment>
               )}
             </li>
           ))}
