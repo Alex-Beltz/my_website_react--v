@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import "../styles/ImageResizerTool.css";
+import "../styles/App.css";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
-import "../styles/ImageResizerTool.css";
 
 export default function ImageResizerTool() {
   const [images, setImages] = useState([]);
@@ -105,11 +106,11 @@ export default function ImageResizerTool() {
     <div className="imageResizerContainer">
       {/* <header>Drop or upload images here</header> */}
       <div className="imageResizerRow">
-        <div className="thumbnailsContainer">
+        <div className="thumbnailsContainer shadow">
           <div style={{ fontWeight: "bold" }}>Selected Images:</div>
           <div className="thumbnailsList">
             {images.map((image) => (
-              <div className="thumbnailItem" key={image.name}>
+              <div className="thumbnailItem shadow" key={image.name}>
                 <img src={image.dataUrl} alt={image.name} />
                 {/* <div className="thumbnailItemName">{image.name}</div> */}
               </div>
@@ -121,19 +122,24 @@ export default function ImageResizerTool() {
             <div>Drag and drop images below, or</div>
 
             <label className="fileInputButton">
-              <input type="file" onChange={handleFileInputChange} multiple />
-              Upload Images
+              <input
+                className=""
+                type="file"
+                onChange={handleFileInputChange}
+                multiple
+              />
+              {/* Upload Images */}
             </label>
           </div>
           <div
-            className="imageDropBox"
+            className="imageDropBox shadow"
             onDragOver={(event) => event.preventDefault()}
             onDrop={handleFileDrop}
           >
             <div className="imageDropBoxInner">
               {resizedImages.length > 0 && (
                 <div className="resizedImagesCont">
-                  <div style={{ fontWeight: "bold" }}>Resized Images:</div>
+                  <div>Resized Images:</div>
                   <button onClick={handleDownload}>
                     Download my resized images
                   </button>
