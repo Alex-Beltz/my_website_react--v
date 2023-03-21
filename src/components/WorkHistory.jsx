@@ -9,7 +9,7 @@ export default function WorkHistory() {
           <img src="image-url" alt="Network Field Engineer" />
         </div>
         <div className="WorkExperienceDescription">
-          <h3>Network Field Engineer</h3>
+          <h2>Network Field Engineer</h2>
           <p>
             I have been working as a Network Field Engineer since 2004, with
             experience in various types of network infrastructure. From small
@@ -17,12 +17,13 @@ export default function WorkHistory() {
             largest carriers and ISPs such as Google, Facebook, Bell Canada,
             Verizon, AT&T, T-Mobile, Wave BB, and government agencies such as
             FEMA. My experience includes working with a variety of equipment
-            such as Cisco, Infanera, Juniper, Adva, Fortinet, Aruba Network, and
-            fiber technologies such as Single-mode fiber (SMF), Multimode fiber
-            (MMF), Fiber to the Home (FTTH), Passive Optical Network (PON),
-            Dense Wavelength Division Multiplexing (DWDM), Coarse Wavelength
-            Division Multiplexing (CWDM), Optical Transport Network (OTN), Fiber
-            Channel (FC), Ethernet over Fiber (EoF), and some SONET/SDH.
+            such as Cisco, Ciena, Infinera, Juniper, Adva, Fortinet, Aruba
+            Network, and fiber technologies such as Single-mode fiber (SMF),
+            Multimode fiber (MMF), Fiber to the Home (FTTH), Passive Optical
+            Network (PON), Dense Wavelength Division Multiplexing (DWDM), Coarse
+            Wavelength Division Multiplexing (CWDM), Optical Transport Network
+            (OTN), Fiber Channel (FC), Ethernet over Fiber (EoF), and some
+            SONET/SDH.
           </p>
           <p>
             I have also worked on structured cabling projects for large
@@ -39,7 +40,7 @@ export default function WorkHistory() {
       </div>
       <div className="ExperinceCategoryCont">
         <div className="WorkExperienceDescription">
-          <h3>Commercial Fisherman</h3>
+          <h2>Commercial Fisherman</h2>
           <p>
             From 2004 to 2012, I worked as a deep sea catcher processor in the
             Bering Sea for US Seafoods, fishing for cod, black cod, pollock,
