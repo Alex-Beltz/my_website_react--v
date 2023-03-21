@@ -87,8 +87,7 @@ function App() {
               {sidebarOpen ? (
                 <React.Fragment>
                   <img src={icon.icon} alt={icon.name} style={iconSize} />
-                  {/* {icon.name} */}
-                  <span style={{ transitionDelay: "0.5s" }}>{icon.name}</span>
+                  <span style={{ transitionDelay: "0.4s" }}>{icon.name}</span>
                 </React.Fragment>
               ) : (
                 <React.Fragment>
